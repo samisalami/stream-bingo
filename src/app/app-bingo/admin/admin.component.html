@@ -1,14 +1,13 @@
-<button class="btn btn-primary mb-3">create card</button>
+<button class="btn btn-primary mb-3" (click)="open(content)">create card</button>
 <button class="btn btn-danger mb-3">delete all cards</button>
-<div class="accordion">
-  <div class="card">
-    <div class="card-header">
+<ngb-accordion #acc="ngbAccordion" [closeOthers]="true">
+  <ngb-panel>
+    <ng-template ngbPanelTitle>
       <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         Random card #1
       </button>
-    </div>
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card card-body">
+    </ng-template>
+    <ng-template ngbPanelContent>
         <form>
           <div class="form-group">
             <div class="row">
@@ -27,7 +26,27 @@
             </div>
           </div>
         </form>
-      </div>
-    </div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title"></h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-</div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="newName">Name</label>
+        <div class="input-group">
+          <input id="newName" class="form-control" placeholder="Bullshit Sami likes to spit">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
