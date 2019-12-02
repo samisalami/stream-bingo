@@ -1,27 +1,18 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import {AppComponent} from './app.component';
-import {AdminComponent} from "./app-bingo/admin/admin.component";
-import {AdminGuard} from "./app-guards/admin-guard";
-import {UserService} from "./app-services/user.service";
-import {AppRoutingModule} from "./app-routing/app-routing.module";
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        AdminComponent
-    ],
-    imports: [
-        AppRoutingModule,
-        BrowserModule,
-        FormsModule,
-        HttpModule
-    ],
-    providers: [UserService, AdminGuard],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
