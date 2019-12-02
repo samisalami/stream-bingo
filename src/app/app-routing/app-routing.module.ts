@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {AppComponent} from "../app.component";
-import {AdminComponent} from "../app-bingo/admin/admin.component";
-import {AdminGuard} from "../app-guards/admin-guard";
+import {AppComponent} from '../app.component';
+import {AdminComponent} from '../app-bingo/admin/admin.component';
+import {AdminGuard} from '../app-guards/admin-guard';
 
 const routes: Routes = [
   { path: 'card/:id', component: AppComponent },
